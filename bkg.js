@@ -1,6 +1,9 @@
 window.onload = function() {
 	var width = window.innerWidth;
-	var height = window.innerHeight;
+	var bkg = document.getElementById('bkg');
+	var img = new Image();
+	img.src = 'imgs/eatingmachine00.png';
+	bkg.appendChild(img);
 	var imgs = [ 
 	"eatingmachine00.png",
 	"eatingmachine01.png",
@@ -14,13 +17,10 @@ window.onload = function() {
 	"eatingmachine09.png"
 	];
 	var columnWidth = width / imgs.length;
+
 	document.onmousemove = function(ev) {
 		var xpos = ev.pageX;
 		var num = Math.floor(xpos/columnWidth);
-		document.body.style.backgroundImage = 'url(imgs/eatingmachine0' + num + '.png)';
-
-		var ypos = ev.pageY;
-		console.log();
-		document.body.style.backgroundSize = Math.floor((1 - ypos/height)*10) + "0%";
+		img.src = 'imgs/' + imgs[num];
 	}
 };
