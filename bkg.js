@@ -1,5 +1,6 @@
 window.onload = function() {
 	var width = window.innerWidth;
+	var height = window.innerHeight;
 	var imgs = [ 
 	"eatingmachine00.png",
 	"eatingmachine01.png",
@@ -14,9 +15,12 @@ window.onload = function() {
 	];
 	var columnWidth = width / imgs.length;
 	document.onmousemove = function(ev) {
-		var pos = ev.pageX;
-		var num = Math.floor(pos/columnWidth);
+		var xpos = ev.pageX;
+		var num = Math.floor(xpos/columnWidth);
 		document.body.style.backgroundImage = 'url(imgs/eatingmachine0' + num + '.png)';
 
+		var ypos = ev.pageY;
+		console.log();
+		document.body.style.backgroundSize = Math.floor((1 - ypos/height)*10) + "0%";
 	}
 };
