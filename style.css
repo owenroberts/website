@@ -1,6 +1,6 @@
 body {
 	font-size:18px;
-	font-family:monaco, sans-serif;
+	font-family:monospace, sans-serif;
 	position:relative;
 	background-position:center;
 }
@@ -12,9 +12,24 @@ body {
 	bottom:0;
 	z-index:-99;
 }
+img { max-width:100%; }
 #bkg img {
 	text-align:center;
 	margin:0 auto;
 	display:block;
-	width:100%;
+}
+
+a:hover {
+	background-color:pink;
+}
+a:active {
+	color:pink;
+}
+
+.thumb {
+	display: none;
+}
+
+.work:hover + .thumb {
+	display:inline-block;
 }
