@@ -3,6 +3,7 @@ body {
 	font-family:monospace, sans-serif;
 	position:relative;
 	background-position:center;
+	line-height:1.45;
 }
 #bkg {
 	position:fixed;
@@ -26,8 +27,20 @@ a:active {
 	color:pink;
 }
 
+p {
+	margin:6px 0;
+}
+hr {
+	border-top: 1px dotted pink;
+    border-bottom: none;
+}
+
 .thumb {
 	display: none;
+	position:absolute;
+	right: 0;
+	top:0;
+	z-index:-1;
 }
 
 .work:hover + .thumb {
