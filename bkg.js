@@ -8,6 +8,7 @@ window.onload = function() {
 		else if (i < 100) 	img.src = "imgs/piggy/piggy"+0+0+i+".jpg";
 		else 				img.src = "imgs/piggy/piggy"+0+i+".jpg";
 		imgs.push(img);
+		bkg.appendChild(img);
 	}
 	var columnWidth = width / imgs.length;
 	bkg.appendChild(imgs[Math.floor(Math.random()*imgs.length)]);
