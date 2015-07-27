@@ -13,10 +13,14 @@ window.onload = function() {
 	var columnWidth = width / imgs.length;
 	bkg.appendChild(imgs[Math.floor(Math.random()*imgs.length)]);
 
-	document.onmousemove = function(ev) {
+	var b = document.querySelector('body');
+
+	b.onmousemove = function(ev) {
 		var xpos = ev.pageX;
 		var num = Math.floor(xpos/columnWidth);
 		bkg.removeChild(bkg.firstChild);
 		bkg.appendChild(imgs[num]);
 	}
+
+
 };
