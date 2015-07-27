@@ -1,5 +1,5 @@
 body {
-	font-size:18px;
+	font-size:14px;
 	font-family:monospace, sans-serif;
 	position:relative;
 	background-position:center;
@@ -43,6 +43,12 @@ hr {
 	z-index:-1;
 }
 
-.work:hover + .thumb {
-	display:inline-block;
+/*  desktop only */
+
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) {
+
+  	.work:hover + .thumb {
+		display:inline-block;
+	}	
 }
+
