@@ -1,5 +1,6 @@
 window.onload = function() {
 
+	// ** check for mobile ** http://www.abeautifulsite.net/detecting-mobile-devices-with-javascript/
 	var isMobile = {
 	    Android: function() {
 	        return navigator.userAgent.match(/Android/i);
@@ -23,11 +24,12 @@ window.onload = function() {
 
 	var numImages;
 
-	if (isMobile) {
+	if (isMobile.any()) {
 		numImages = 6;
 	} {
 		numImages = 143;
 	}
+	
 
 	var width = window.innerWidth;
 	var bkg = document.getElementById('bkg');
@@ -43,7 +45,7 @@ window.onload = function() {
 	var columnWidth = width / imgs.length;
 	bkg.appendChild(imgs[Math.floor(Math.random()*imgs.length)]);
 
-	if (!isMobile) {
+	if (!isMobile.any()) {
 		var b = document.querySelector('body');
 		b.onmousemove = function(ev) {
 			var xpos = ev.pageX;
