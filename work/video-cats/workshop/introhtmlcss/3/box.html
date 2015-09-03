@@ -1,0 +1,126 @@
+<html>
+<head>
+	<title>Class #3: HTML + CSS: Grid Systems</title>
+	<link rel="stylesheet" href="styles/styles.css" type="text/css">
+  
+  <style type="text/css">
+  
+  #box1 {
+    border:1px dashed black;
+    width:540px;
+    height:280px;
+    background-color:white;
+    text-align:center
+  }
+  
+  #box2 {
+    border:1px solid black;
+    background-color:orange;
+    width:480px;
+    height:220px;
+    margin:auto;
+  }
+  
+  #box3 {
+    border:1px solid black;
+    width:400px;
+    height:150px;
+    background-color:white;
+    text-align:center;
+    margin:auto;
+  }
+
+  #box4 {
+    border:1px dashed black;
+    width:300px;
+    height:80px;
+    background-color:white;
+    text-align:center;
+    margin:auto;
+  }
+  
+  </style>
+	
+</head>
+
+<body>
+	<h1>Welcome to class #3!!</h2>
+	
+		<div class="nav">
+			<ul><li><a href="index.html">Grid Systems</a></li>
+				<li><a href="box.html">CSS Box Model</a></li>
+				<li><a href="pos.html">CSS Positioning</a></li>
+				</ul>
+			</div>
+		</div>
+
+		
+	<h2>CSS Box Model</h2>  
+  <div id="box1">Margin
+    <div id="box2">Border
+      <div id="box3">Padding
+        <div id="box4">Content
+          </div>
+      </div>
+    </div>
+  </div>
+  
+	<h3>Basic elements</h3>
+	
+	<ul><li>HTML elements conceived as boxes.</li>
+		<li>Margin: Clear area around border of box.  </li>
+		<li>Border: Boundary around box.</li>
+		<li>Padding: Area between border and content.  Takes background color.</li>
+		<li>Content: Where text and images appear.</li>
+		</ul>
+	
+	
+	<h2>Scaling</h2>
+	<ul><li>Static: Using hard coded pixel numbers.</li>
+		<li>Fluid: Using auto or inherited values, or percentages.</li>
+		<li>Adjusting: Set minimum and maximum values for elements that inherit size.</li>
+		<li>Overflow: Determines whether content that doesn't fit in the specified size is displayed.  Can be <pre>hidden, visible, scroll, inherit, auto</li>
+	</ul>
+	
+	<h2>Aesthetics</h2>
+	<h3>Background</h3>
+	<ul><li>Images: Can be fixed or move with element scroll.  Like HTML background.</li>
+		<li>Color</li>
+		<li>Repeat: x-axis or y-axis.</li>
+		<li>Set position: Set image from top or bottom, left or right.</li>
+		<li><pre> div.examples {
+	background-color: red;
+	background-image: url(cat-ears.jpg);
+	background-repeat:repeat-x;
+	}
+		</pre></li>
+	</ul>
+	
+	<h3>Other properties</h3>
+	<ul><li>Rounded corners: Use radius to give box rounded corners.</li>
+		<li>Opacity: Make elements show other elements placed behind them.</li>
+		<li>Drop shadow: Nice way to pop elements out.</li>
+		<li><pre> div {
+	background-color:blue;
+	box-shadow: 10px 10px 5px #888888;
+	border-top-left-radius: 30px;	
+	opacity:0.5;
+	}
+	</pre></li>
+	</ul>
+		
+		
+		
+	
+		
+	<h2>Exercise 5</h2>
+	<ul><li>Add margins, borders, padding to existing elements on websites.</li>
+		<li>Create navigation menu for your site.</li>
+		</ul>
+
+	
+
+	
+</body>
+</html>
+
