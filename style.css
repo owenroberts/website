@@ -1,9 +1,9 @@
 body {
-	font-size:14px;
+	font-size:12px;
 	font-family:monospace, sans-serif;
 	position:relative;
 	background-position:center;
-	line-height:1.45;
+	line-height:1;
 }
 #bkg {
 	position:fixed;
@@ -41,6 +41,8 @@ hr {
 	right: 10px;
 	top:10px;
 	z-index:-1;
+	max-width:66%;
+	box-shadow: -2px -2px 5px pink;
 }
 
 /*  desktop only */
