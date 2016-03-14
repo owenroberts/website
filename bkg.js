@@ -1,4 +1,4 @@
-window.onload = function() {
+window.addEventListener('load', function() {
 
 	// ** check for mobile ** http://www.abeautifulsite.net/detecting-mobile-devices-with-javascript/
 	var isMobile = {
@@ -30,9 +30,9 @@ window.onload = function() {
 		numImages = 143;
 	}
 	
-
-	var width = window.innerWidth;
 	var bkg = document.getElementById('bkg');
+
+	var width = bkg.offsetWidth;
 	var imgs = [];
 	for (var i = 3; i < numImages; i++) {
 		var img = new Image();
@@ -41,18 +41,25 @@ window.onload = function() {
 		else 				img.src = "imgs/piggy/piggy"+0+i+".jpg";
 		imgs.push(img);
 		bkg.appendChild(img);
+		bkg.removeChild(img);
 	}
-	var columnWidth = width / imgs.length;
+	var columnWidth;
+	var setSize = function() {
+		columnWidth = window.innerWidth / imgs.length;
+	}
+	setSize();
 	bkg.appendChild(imgs[Math.floor(Math.random()*imgs.length)]);
 
 	if (!isMobile.any()) {
-		var b = document.querySelector('body');
-		b.onmousemove = function(ev) {
+		document.onmousemove = function(ev) {
 			var xpos = ev.pageX;
 			var num = Math.floor(xpos/columnWidth);
 			bkg.removeChild(bkg.firstChild);
 			bkg.appendChild(imgs[num]);
 		}
+		window.onresize = function(ev) {
+			setSize();
+		}
 	}
 
-};
+});
