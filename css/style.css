@@ -4,12 +4,15 @@ body {
 	font-size:16px;
 }
 #bkg {
-	position:fixed;
+	position:absolute;
 	top:0;
 	left:0;
-	right:0;
-	bottom:0;
-	z-index:-99;
+}
+#bkg img {
+	text-align:center;
+	margin:0 auto;
+	display:block;
+	
 }
 ul { list-style:none;
 padding:0;
