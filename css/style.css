@@ -30,6 +30,7 @@ hr { border:none;border-top:1px solid black;}
 a { 
 	color: black;
 	text-decoration: none;
+	text-shadow: 1px 1px 1px white;
 }
 a:hover {
 	/*color:darkblue;*/
@@ -43,7 +44,6 @@ a:hover {
 	position:absolute;
 	top: 1em;
 	left: 2em;
-	
 }
 .project:hover .work {
 	display:inline-block;
@@ -53,6 +53,7 @@ a:hover {
 }
 .project .work.white a {
 	color:white;
+	text-shadow: 1px 1px 1px black;
 }
 #teaching p { margin: 0.5em;}
 #teaching a {
