@@ -1,0 +1,18 @@
+name: owen byron roberts
+description: the website of owen byron roberts
+
+version: v3.4.0
+desintation: /blog/
+permalink: /:year/:month/:day/:title.html
+
+kramdown:  
+  parse_block_html: true
+
+# Use the following plug-ins
+gems:
+  - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
+  - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
+
+# Exclude these files from your production _site
+exclude:
+  - README.md

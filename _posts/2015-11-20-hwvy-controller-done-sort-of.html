@@ -1,0 +1,26 @@
+---
+layout: post
+title: HWVY controller done, sort of
+date: 2015-11-20 07:04:10.000000000 -05:00
+
+categories:
+- hwyv
+- music
+tags: []
+
+---
+<p>Finally got something working for the non-butt version of my HWYV sequencer (<a href="https://www.youtube.com/watch?v=MmUU6m2OfDs" target="_blank">this is the butt version</a>).  There were several bad design ideas before I decided to 3d print it.  It took 3 prints but I got something close enough to hold the circuit and strong enough to work with the force sensing resistor.  A unintended benefit of the 3d print is that the platform is a little flexible so its actually a more responsive surface than earlier wood prototypes.</p>
+
+<p><img  src="{{ site.baseurl }}/assets/img_0298-e1448001486108.jpg" alt="IMG_0298" /></a></p>
+<p>I used the same leather and sewing technique to hold the FSRs as in a previous analog synth.  It took almost four hours to sew the leather patches into place and I felt like it was a pretty stupid approach while I was doing it, but now that I'm done I think it's really nice, and if I actually use it a lot and perform some HWYV stuff I guess 4 hours isn't much.</p>
+<p><img  src="{{ site.baseurl }}/assets/img_0299.jpg" alt="IMG_0299" /></a></p>
+<p><img 1970" src="{{ site.baseurl }}/assets/img_0300-e1448001749760.jpg" alt="IMG_0300" /></a></p>
+<p>The controller has two FSRs, the two black leather patches, one controls the rate at which the sampler plays a sample, the second controls the start time of that sample.  The slider at the top (which needs a slider knob) controls the duration of the sample.  The blue buttons move between different channels.  Currently the sequencer uses 8 channels (each channel plays a different sample).  The red button records the performance of the sequencer on each channel so it can be played back.  The two green buttons I added as auxiliary buttons in case I come up with future functionality.  A couple ideas I have are a mute button for each channel (thought that's sort of counter-intuitive the musical approach behind HWYV), a on/off toggle for adjusting the sample length (currently it switches only when the slider changes, but the slider potentiometer is a little noisy, so it changes more than I would like it) and another is something to toggle between different sets of music.  Since I have to use a computer anyway, I usually do this just by triggering them in with the mouse, but would be nice do not have to do that.</p>
+<p><img src="{{ site.baseurl }}/assets/img_0309-e1448002069948.jpg" alt="IMG_0309"  /></a></p>
+<p><img src="{{ site.baseurl }}/assets/img_0310-e1448002114889.jpg" alt="IMG_0310"  /></a></p>
+<p>I also updated the code in two significant ways.  First off, I realized that the logic in the original version was totally out to lunch.  I had two simultaneous systems, one a bunch of booleans, the other a series of state changes, to keep track of which channels had recorded performances and which didn't, and how to play them back.  I realized that I could get rid of about 75% of the bogus logic I had written in 2012 by using only the state changes.  It's kind of interesting to see how bad my approach was back then.  The original program didn't use classes at all, instead I just had a bunch of different array keeping track of recordings on each channel.  So I made a Channel class which made everything much simpler.</p>
+<p><img src="{{ site.baseurl }}/assets/screen-shot-2015-11-20-at-2-56-31-pm.png" alt="Screen Shot 2015-11-20 at 2.56.31 PM"  /></a></p>
+<p>I also completely redesigned the visual interface.  I still need to rethink how I'm representing tempo, sample time and sample beginning positions, right now it is a little counter intuitive though easy for me because I understand what the numbers represent.  The biggest change was the color scheme, which was just white, black and red, to something a little more friendly on the eyes.  But I'm not sure the horizontal organization makes sense, it looks more like a mixing board, which is fine, but the bars look more like expressions of volume (which in a way they are, but not literally) than tempo, so I may return to a horizontal look.  Overall, a huge step forward but still a lot of improvements to be made.</p>
+<p>What I really need to do now is start making some recordings and putting them on Soundcloud or something.  I'm a little worried about copyright violations but the tracks are so distorted it seems somewhat unlikely.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>

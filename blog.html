@@ -1,0 +1,21 @@
+---
+layout: main
+---
+<div class="posts row">
+	<div class="medium-12 columns"><h2>blog</h2></div>
+	{% for post in site.posts %}
+		<article class="post medium-12 columns">
+			<div class="title">
+				<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+				<span class="byline">
+					<span class="date">Posted on {{ post.date | date: "%B %e, %Y" }}</span>
+				</span>
+			</div>
+			
+			<div class="excerpt">
+			  {{ post.excerpt | remove: '<p>' | remove: '</p>' }} <!-- <a href="{{ site.baseurl }}{{ post.url }}">... keep reeding</a> -->
+			</div>
+			<hr>
+		</article>
+	{% endfor %}
+</div>
