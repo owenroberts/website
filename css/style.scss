@@ -17,7 +17,7 @@ body {
 		display:block;
 	}
 }
-ul { 
+.menu ul { 
 	list-style:none;
 	padding:0;
 }
@@ -102,6 +102,8 @@ a {
 
 /* blog stuff */
 .post {
+	font-family: 'Karla', sans-serif;
+	font-size: 1.25em;
 	.post-title { font-weight:bold; font-size: 1.25em; }
 	.title {
 		font-weight:bold;
@@ -122,3 +124,6 @@ a {
 		font-weight: bold;
 	}
 }
+
+
+code { background: #eee; padding: 0.1em 0.25em; }

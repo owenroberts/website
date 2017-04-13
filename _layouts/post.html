@@ -12,7 +12,7 @@ layout: main
 			{% assign categories = page.categories %}
 			{% for category in categories %}
  		 	<span class="cat">
- 		 		<a href="{{ site.url }}/category.html#{{ category }}" rel="category">{{ category }}</a></span>{% unless forloop.last %},{% endunless %}
+ 		 		<strong><a href="{{ site.url }}/category.html#{{ category }}" rel="category">{{ category }}</a></strong></span>{% unless forloop.last %},{% endunless %}
 			{% endfor %}
 		</div>
 		<div class="entry">
