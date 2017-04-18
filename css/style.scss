@@ -3,6 +3,7 @@
 # only Main files contain this front matter, not partials.
 ---
 @import url(https://fonts.googleapis.com/css?family=Karla:400,700);
+@import url(https://fonts.googleapis.com/css?family=Lora:400,400i,700);
 body { 
 	font-family: monospace;
 	font-size:16px;
@@ -120,6 +121,7 @@ a {
 		color:slategray;
 		
 	}
+	.entry { font-family: 'Lora', serif; }
 	.entry a, .excerpt a {
 		font-weight: bold;
 	}
