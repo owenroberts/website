@@ -18,7 +18,7 @@ body {
 		display:block;
 	}
 }
-.menu ul, footer ul { 
+.menu ul, footer ul, .front ul { 
 	list-style:none;
 	padding:0;
 }
@@ -98,7 +98,17 @@ a {
 .post {
 	font-family: 'Karla', sans-serif;
 	font-size: 1.25em;
-	.post-title { font-weight:bold; font-size: 1.25em; }
+	.front {
+		
+		.post-title { 
+			font-weight:bold; 
+			font-size: 1.25em; 
+		}
+		.links {
+			font-size: 0.8em;
+		}
+	}
+	
 	.title {
 		font-weight:bold;
 		a {
@@ -108,15 +118,26 @@ a {
 	.excerpt {
 		font-size: 0.85em;
 	}
-	.byline { font-size:0.85em; font-weight: 100; }
+	.byline { font-size:0.75em; font-weight: 100; }
 	.date {
 		font-style:italic;
 		color:slategray;
 		
 	}
-	.entry { font-family: 'Lora', serif; }
+	.entry { 
+		font-family: 'Lora', serif; 
+		font-size: 1em; 
+	}
 	.entry a, .excerpt a {
 		font-weight: bold;
+	}
+	p:first-child {
+		margin-top:0;
+	}
+	blockquote {
+		background: #efefef;
+    	margin: 0;
+    	padding: 0.5em 1em;
 	}
 }
 
