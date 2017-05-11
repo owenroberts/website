@@ -1,13 +1,15 @@
 ---
 layout: main
 ---
-<div class="row">
-	<article class="post medium-12 columns">
+<div class="row post">
+	<div class="front medium-4 columns">
 		<div class="post-title">
 			{{ page.title }}
 		</div>
 		<div class="byline">
 			<span class="date">Posted on {{ page.date | date: "%B %e, %Y" }}</span>
+		</div>
+		<div class="cats">
 			in
 			{% assign categories = page.categories %}
 			{% for category in categories %}
@@ -15,19 +17,20 @@ layout: main
  		 		<strong><a href="{{ site.url }}/category.html#{{ category }}" rel="category">{{ category }}</a></strong></span>{% unless forloop.last %},{% endunless %}
 			{% endfor %}
 		</div>
-		<div class="entry">
-			{{ content }}
-		</div>
-	</article>
-	<footer class="medium-12 columns">
-		<ul>
-  			{% if page.previous.url %}
-    			<li><a class="prev" href="{{page.previous.url}}">< previous: {{page.previous.title}}</a></li>
- 			{% endif %}
+		<ul class="links">
   			{% if page.next.url %}
     			<li><a class="next" href="{{page.next.url}}">> next: {{page.next.title}} </a></li>
   			{% endif %}
+  			{% if page.previous.url %}
+    			<li><a class="prev" href="{{page.previous.url}}">< previous: {{page.previous.title}}</a></li>
+ 			{% endif %}
   			<li><a href="/blog.html">< return to blog</a></li>
 		</ul>
+	</div>
+	<div class="entry medium-8 columns">
+		{{ content }}
+	</div>
+	<footer class="medium-12 columns">
+		
 	</footer>
 </div>
