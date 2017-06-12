@@ -5,7 +5,7 @@
 	<meta charset="utf-8" />
 	<!-- <link href="lines/css/lines.css" rel="stylesheet" type="text/css" /> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-	<link href="pig.css" type="text/css" rel="stylesheet">
+	<link href="css/pig.css" type="text/css" rel="stylesheet">
 </head>
 <body>
 	<div id="wrap">
@@ -14,7 +14,9 @@
 			<source  type="audio/mp3">
 		</audio>
         <div id="playback">
-        	<div id="play">❚❚</div>
+        	<div id="play">
+        		<img src="css/play.png" alt="" >
+        	</div>
         	<div id="progress">
         		<div id="playhead"></div>
         		<div id="bar"></div>
@@ -28,7 +30,8 @@
         <canvas id="canvas" class="draw" ></canvas>
         <p>by Owen Ribbit</p>
 	</div>
-
+	
+	<script type="text/javascript" src="lib/mobile-check.js"></script>
 	<script type="text/javascript" src="lib/jquery.min.js"></script>
 	<script type="text/javascript" src="lib/cool.js"></script>
 	<script type="text/javascript" src="lib/play.js"></script>
