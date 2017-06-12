@@ -1,14 +1,22 @@
 $(document).ready(function() {
+
+	var mob = false;
+	if (window.mobilecheck()) mob = true;
+	console.log(mob);
+
 	var	audio =  	document.getElementById('audio'),
 		startBtn = 	document.querySelector('#start'),
 		prevBtn = 	document.querySelector('#prev'),
 		nextBtn = 	document.querySelector('#next'),
 		playBtn = document.querySelector('#play'),
+		playImage = document.querySelector('#play img')
 		progress = document.querySelector('#progress'),
 		bar = document.querySelector('#bar'),
 		progressTotal = document.querySelector('#progress').offsetWidth,
 		playhead = document.querySelector('#playhead')
 		;
+
+		console.log(playImage);
 
 	var currentFrame = 1, numFrames = 24;
 
@@ -36,9 +44,10 @@ $(document).ready(function() {
 
 		loadAnimation(currentFrame);
 		audio.src = "clips/" + currentFrame + ".mp3";
-		audio.play();
-		playBtn.innerHTML = '❚❚';
-
+		if (!mob || currentFrame != 1) {
+			audio.play();
+			playImage.src = "css/pause.png"
+		}
 		location.hash = '#'+currentFrame;
 	}
 
@@ -51,10 +60,10 @@ $(document).ready(function() {
 	playBtn.addEventListener('click', function() {
 		if ( audio.paused ) {
 			audio.play();
-			playBtn.innerHTML = '❚❚';
+			playImage.src = "css/pause.png"
 		} else {
 			audio.pause();
-			playBtn.innerHTML = '▶';
+			playImage.src = "css/play.png"
 		}
 	});
 	//update progress using requestAnimationFrame
@@ -66,7 +75,7 @@ $(document).ready(function() {
 	window.requestAnimationFrame( step );
 
 	audio.addEventListener('ended', function() {
-		playBtn.innerHTML = '▶';
+		playImage.src = "css/play.png"
 	});
 	progress.addEventListener('click', function(ev) {
 		var ratio = (ev.clientX - ev.currentTarget.getBoundingClientRect().left) / progressTotal;
