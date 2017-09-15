@@ -140,7 +140,18 @@ a {
     	margin: 0;
     	padding: 0.5em 1em;
 	}
+	em { color: #9b26ff; }
 }
 
 
 code { background: #eee; padding: 0.1em 0.25em; }
+
+@media screen and (max-width: 40em) {
+	.post {
+		.post-title, .byline, .cats {
+			/* display:inline-block; */
+		}
+		.cats { font-size: 0.75em; }
+		.links li { display: inline-block; }
+	}
+}
