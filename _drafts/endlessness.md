@@ -2,7 +2,7 @@
 layout: post
 title: endlessness
 date: 2017-09-15
-published: true
+published: false
 categories:
 - art
 - video games
