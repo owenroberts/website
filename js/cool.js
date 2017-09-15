@@ -4,7 +4,7 @@ window.addEventListener('load', function() {
 	}
 
 	var title = "😬😬 😬😬"
-	var alttitle = "😁😁 😁😁";
+	var alttitle = "😑🌚 😞😤";
 	var time = 500;
 	var timer = Date.now();
 	
