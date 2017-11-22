@@ -1,0 +1,45 @@
+<link rel="shortcut icon" href="favicon.ico"/>
+<meta charset="utf-8">
+<style>
+body {
+  font-family:Palatino;
+  width:600px;
+  margin:5%;
+  background-color:white;
+  transition:all 200s;
+  color:black;
+  text-align:center;
+}
+body:hover {
+  background-color:yellow;
+}
+
+a {
+  color:pink;
+}
+img {
+  box-shadow: 0 0 100px pink;
+  transition:all 10s;
+}
+img:hover {
+  box-shadow: 0 0 1000px blue;
+  
+}
+
+</style>
+<p>SINCE time began, dextrose has been the <em>one</em> sugar the body uses <em>directly</em> for energy.  In recent years, however, science has learned to derive pure dextrose, present everywhere in Nature, from many fruits and vegetables.  In fact, the commercial production of dextrose from golden American corn is one of the greatest chemurgic achievements of this century.</p>
+<a href="peds.html"><img src="dextrose_monohydrate_food_grade.jpg" width="360" height="360" alt="Dextrose Monohydrate Food Grade"></a>
+<script>
+var getRand = function(n) {
+	return Math.floor(Math.random() * n);
+};
+
+var t = "life begins on dextrose "
+function step() {
+  t = t.substring(1,t.length) + t.substring(0,1);
+  document.title = t;
+  setTimeout(step, 15);
+}
+step();
+
+</script>

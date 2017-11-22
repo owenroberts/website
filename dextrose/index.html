@@ -1,0 +1,35 @@
+<link rel="shortcut icon" href="favicon.ico"/>
+<title>A dextrose by any other name...</title>
+<style>
+  body {
+    margin:0; background-image:url('sugar-dextrose-babys-crop-babys-begin-life-on-dextrose-swscan04146-copy.jpg');
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+h1 {
+  margin:0;
+  font-weight:normal;
+  text-align:center;
+  background:white;
+  position:fixed;
+  bottom:0;
+  display:block;
+  width:100%;
+  
+}
+a {
+  color:pink;
+}
+</style>
+<h1>a <em><a href="rose.html">dextrose</a></em> by any other name</h1>
+<script>
+var start = null;
+var t = "a dextrose by any other name "
+function step() {
+  t = t.substring(1,t.length) + t.substring(0,1);
+  document.title = t;
+  setTimeout(requestAnimationFrame(step), 1000/15);;
+}
+
+requestAnimationFrame(step);
+</script>

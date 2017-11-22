@@ -1,0 +1,80 @@
+<link rel="shortcut icon" href="favicon.ico"/>
+<meta charset="utf-8">
+<style>
+body {
+  font-family:courier;
+  width:600px;
+  margin:5%;
+  background-color:white;
+  transition:all 5s;
+  color:black;
+}
+body:hover {
+  background-color:green;
+}
+
+a {
+  color:pink;
+}
+
+t {
+  /*background:white;*/
+  width:10px;
+}
+t.active {
+  display:inline-block;
+  position:absolute;
+  background:green;
+  width:1600px;
+  transition:all 3s;
+}
+
+
+</style>
+<p>If there is one myth out there that I see over and over again it is this. Everyone thinks that if they don’t slam a protein shake within five minutes of their last set of a workout that they will go all catabolic and lose all of their muscle. This is completely false. Within that same breath they think they also need to consume dextrose or some other simple carbohydrate to “spike” blood sugar and replenish glycogen levels.</p><a href="theend.html">I will address both of these myths.</a>
+<script>
+var getRand = function(n) {
+	return Math.floor(Math.random() * n);
+};
+
+var t = "^ . . ^ "
+function step() {
+  t = t.substring(1,t.length) + t.substring(0,1);
+  document.title = t;
+  setTimeout(step, 50);
+}
+step();
+var init = function() {
+  var grafs = document.getElementsByTagName('p');
+  var g = grafs[0];
+  var strings = g.innerHTML.match(/.{1,1}/g);
+  console.log(strings);
+  for (var i = 0; i < strings.length; i++) {
+    strings[i] = '<t onmouseover="hover(this)">'+strings[i]+'</t>';
+  }
+  g.innerHTML = strings.join('');
+  //setTimeout(changeText, 10);
+}
+
+function hover(e) {
+  e.className = 'active';
+}
+
+
+
+var changeText = function() {
+  var active = document.getElementsByClassName('active');
+  var e = getRand(active.lenght);
+  for (a in active) 
+    if (a !=e)
+      active[a].className='';
+  var ts = document.getElementsByTagName('t');
+  for (var i = 0; i < getRand(100); i++){
+    var n = getRand(ts.length-1);
+    ts[n].className = 'active';
+  }
+  setTimeout(changeText, getRand(1000));
+}
+ 
+init();
+</script>
