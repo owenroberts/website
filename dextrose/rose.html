@@ -1,0 +1,66 @@
+<link rel="shortcut icon" href="favicon.ico"/>
+<title>A dextrose by any other name...</title>
+<style>
+body {
+  font-family:monospace;
+  width:600px;
+  margin:5%;
+  background-color:white;
+  transition:all 300s;
+  color:blue;
+}
+body:hover {
+  background-color:blue;
+}
+
+a {
+  color:pink;
+}
+img {
+  outline:10px dashed pink;
+  margin:50px;
+  transition:all 10s;
+  
+}
+img:hover {
+  outline:10px dashed blue;
+}
+</style>
+<p>So I placed a bulk order for sausage that I was told would be "Free of preservatives and additives" and ended up with 12 pounds of sausage with the following ingredients: Pork, water, dextrose, MSG, spices</p>
+
+<p>Dextrose and MSG: awesome. I cannot bring myself to throw out 15 pounds of sausage, so what I want to know is how should I consider dextrose? Is Dextrose the 100% equivalent to table sugar?</p>
+
+<p>I know MSG has gotten a bad rap, but all the articles I look at online just talk about how the government uses it to make poor people more satisfied with their gas station food which means jack squat to me as I could not care less about conspiracy theories and am more interested in the facts behind the food. What is the deal with MSG, can anyone tell me?</p>
+
+<p>I guess if I am going to eat this sausage I just want to understand what I'm putting into my body, because I've got 15 pounds of this crap.</p>
+<a href="myth.html"><img src="Glucose_animation.gif" width="400" alt="Glucose Animation"></a>
+<script>
+var getRand = function(n) {
+	return Math.floor(Math.random() * n);
+};
+
+var t = "................^........"
+function step() {
+  t = t.substring(1,t.length) + t.substring(0,1);
+  document.title = t;
+  setTimeout(requestAnimationFrame(step), 1000);
+}
+
+requestAnimationFrame(step);
+var dextrose = ['d','e','x','t','r','o','s','e',' ']
+var changeText = function() {
+  var grafs = document.getElementsByTagName('p');
+  var g = grafs[getRand(grafs.length)];
+  var strings = g.innerHTML.match(/.{1,1}/g);
+
+  var i = getRand(strings.length-1);
+  
+  strings[i] = dextrose[i%dextrose.length];
+  
+  g.innerHTML = strings.join('');
+     
+  setTimeout(changeText, getRand(200));
+}
+ 
+changeText();
+</script>

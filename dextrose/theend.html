@@ -1,0 +1,60 @@
+<link rel="shortcut icon" href="favicon.ico"/>
+<meta charset="utf-8">
+<style>
+body {
+  font-family:Helvetica,sans-serif;
+  margin:0; 
+  background-image:url('petroleum-shell-46-swscan03700-copy-2.jpg');
+  background-repeat:no-repeat;
+  background-size:cover;
+  font-size:50px;
+  color:white;
+}
+a {
+  color:pink;
+}
+img {
+  box-shadow: 0 0 100px pink;
+  transition:all 10s;
+}
+img:hover {
+  box-shadow: 0 0 1000px blue;
+  
+}
+
+</style>
+<p>Hidden Sugars, as in Fructose, Sucrose, Dextrose
+More and more packaged foods are sweetened with a baffling array of sugars, which add calories without boosting nutritional value. Ingredients that end in the word "ose" are all forms of sugar, as are honey and corn sweeteners.
+
+A recent study at the University of California, Davis showed that these sweeteners had a similar metabolic effect to other forms of sugar. Still, all sweeteners add calories but few nutrients, and they can contribute to weight problems.
+
+To know exactly how many grams of total sugar a product contains, check out the nutrient facts label. Four to 5 grams of sugar is the equivalent of a level teaspoon.</p>
+
+<script>
+var getRand = function(n) {
+	return Math.floor(Math.random() * n);
+};
+
+var t = "the end "
+function step() {
+  t = t.substring(1,t.length) + t.substring(0,1);
+  document.title = t;
+  setTimeout(step, 15);
+}
+
+step();
+
+var changeText = function() {
+  var grafs = document.getElementsByTagName('p');
+  var g = grafs[getRand(grafs.length)];
+  var strings = g.innerHTML.match(/.{1,1}/g);
+  var i = getRand(strings.length-1);
+  if (strings[i] != 'e' && strings[i] != 'n' && strings[i] != 'd') delete strings[i];
+  
+  g.innerHTML = strings.join('');
+     
+  setTimeout(changeText, getRand(100));
+}
+ 
+changeText();
+</script>

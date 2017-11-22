@@ -1,0 +1,78 @@
+<link rel="shortcut icon" href="favicon.ico"/>
+<meta charset="utf-8">
+<style>
+body {
+  font-family:monospace;
+  width:600px;
+  margin:5%;
+  background-color:white;
+  transition:all 50s;
+  color:black;
+}
+body:hover {
+  background-color:black;
+}
+
+a {
+  color:pink;
+}
+img {
+  outline:10px dashed pink;
+  margin:50px;
+  transition:all 10s;
+  
+}
+img:hover {
+  outline:10px dashed blue;
+}
+t {
+  transition:all 100ms;
+  position:relative;
+}
+t:hover {
+  height:100%;
+  background:blue;
+}
+
+</style>
+<p>Breaking the myth of <a id="dex" href="dex.html">dextrose</a> and malto</p>
+
+<p>I think everybody should consider switching from Dex/malto to powdered oats or other quality carbs. I believe you will have better results and you will feel a lot better after the shake, unless you enjoy the sugar high and crash.</p>
+
+<p>The myth has already been broken, bro. The challenge lies in "escaping from the old [ideas], which ramify, for those brought up as most of us have been, into every corner of our minds."</p>
+
+<p>I just see a lot of posts were people are taking dextrose. So I guess this is for them. Maybe they have not heard the truth yet.</p>
+<script>
+var getRand = function(n) {
+	return Math.floor(Math.random() * n);
+};
+
+var t = "• • • • • • • • O • • • •• • • •• • • • •• • • • •• • • • • • • •• • • • • •• • • • • • • • • • • •"
+function step() {
+  t = t.substring(1,t.length) + t.substring(0,1);
+  document.title = t;
+  setTimeout(step, 15);
+}
+
+step();
+var start = true;
+
+var changeText = function() {
+  
+  var dex = document.getElementById('dex');
+  dex.remove();
+  var grafs = document.getElementsByTagName('p');
+  var g = grafs[getRand(grafs.length)];
+  var strings = g.innerHTML.match(/.{1,1}/g);
+
+  var n = getRand(strings.length-1);
+  
+  strings[n] += '<a id="dex" href="dex.html">dextrose</a>';
+  
+  g.innerHTML = strings.join('');
+     
+  setTimeout(changeText, getRand(1500));
+}
+ 
+changeText();
+</script>
