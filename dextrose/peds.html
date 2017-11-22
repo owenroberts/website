@@ -1,0 +1,52 @@
+<link rel="shortcut icon" href="favicon.ico"/>
+<meta charset="utf-8">
+<style>
+body {
+  font-family:courier;
+  width:600px;
+  margin:5%;
+  background-color:white;
+  transition:all 500s;
+  color:black;
+}
+body:hover {
+  background-color:green;
+}
+
+a {
+  color:pink;
+}
+
+
+</style>
+<p>In infants with one of several disorders (eg, ketotic hypoglycemia, glycogen-storage disorder, free fatty acid metabolism defect, mild hyperinsulinism), hypoglycemia can be prevented with frequent feedings involving a specifically designed diet and a rapid response with parenteral dextrose when feeding is inadequate because of GI problems or other illnesses. Fructose must be avoided in children with fructose diphosphatase deficiency.</p>
+<a href="theend.html">Next section</a>
+<script>
+var getRand = function(n) {
+	return Math.floor(Math.random() * n);
+};
+
+var t = "."
+function step() {
+  t = t.substring(1,t.length) + t.substring(0,1);
+  document.title = t;
+  setTimeout(step, 15);
+}
+
+step();
+
+var changeText = function() {
+  var s = new Image();
+  s.src = "granules.gif";
+  s.style.position = 'absolute';
+  s.style.zIndex = '-1';
+  s.style.left = getRand(window.innerWidth) + 'px';
+  s.style.bottom = getRand(window.innerHeight) + 'px';
+  s.style.width = '2000px';
+  document.body.appendChild(s);
+     
+  setTimeout(changeText, getRand(50));
+}
+ 
+changeText();
+</script>
