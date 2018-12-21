@@ -3,15 +3,14 @@ window.addEventListener('load', function() {
     	return this.substr(0, index) + character + this.substr(index+character.length);
 	}
 
-	var title = "😬😬 😬😬"
-	var alttitle = "😑🌚 😞😤";
+	const titles = ["😬", "😑", "🌚", "😞", "😤"];
 	var time = 500;
 	var timer = Date.now();
 	
 	var b = document.querySelector("#butt");
 	var t = b.innerHTML;
 	
-	var letterMove = function() {
+	function letterMove() {
 		var n = Math.floor(Math.random() * t.length);
 		var temp = t[n];
 		var r = n;
@@ -25,12 +24,11 @@ window.addEventListener('load', function() {
 		}
 	}
 	
-	var loop = function() {
+	function loop() {
 		requestAnimationFrame(loop);
 		if (Date.now() > timer + time) {
 			timer = Date.now();
-			if (document.title == title) document.title = alttitle;
-			else document.title = title;
+			document.title = titles[Math.floor(Math.random() * titles.length)];
 			letterMove();
 		}
 	};
