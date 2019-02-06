@@ -1,3 +1,6 @@
 [submodule "talk/slides"]
 	path = talk/slides
 	url = https://github.com/owenroberts/slides
+[submodule "lines"]
+	path = lines
+	url = https://github.com/owenroberts/lines
