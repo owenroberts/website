@@ -5,8 +5,10 @@
 @import url(https://fonts.googleapis.com/css?family=Karla:400,700);
 @import url(https://fonts.googleapis.com/css?family=Lora:400,400i,700);
 
+$purple: #CFC6E9;
+
 body { 
-	font-family: menlo, monaco, monospace, sans-serif;
+	font-family: verdana, sans-serif;
 	font-size:16px;
 	line-height: 1.75;
 }
@@ -37,11 +39,12 @@ hr {
 
 a { 
 	color: black;
-	text-decoration: none;
-	&:hover {
+	/*text-decoration: none;*/
+	/*&:hover {
 		text-decoration: underline;
-	}
+	}*/
 }
+a:hover { color: $purple; }
 
 .work .columns {
 	margin-bottom: 1em ;
@@ -60,23 +63,24 @@ a {
 	}
 	color:white;
 	a { color:black; background:white; }
+	a:hover { color: $purple; }
 }	
 
 #teaching {
 	margin-bottom: 2em;
 	p { margin: 0.5em; }
-	a { font-weight:bold; }
+	a { /*font-weight:bold;*/ }
 }
 
 #page {
 	p {
-		border: 4px solid #CFC6E9;
+		border: 4px solid $purple;
 		padding:1em;
 		line-height: 1.65;
 		font-size: 16px;
 	}
 	a {
-		font-weight: bold;
+		/*font-weight: bold;*/
 	}
 	img {
 		margin: 0.5em 0;
@@ -103,12 +107,14 @@ a {
 
 /* blog stuff */
 .post {
-	font-family: 'Karla', sans-serif;
+	/*font-family: 'Karla', sans-serif;*/
 	font-size: 1.25em;
+	p { font-size: 1.1em; }
+	margin-top: 2em;
 	.front {
 		
 		.post-title { 
-			font-weight:bold; 
+			/*font-weight:bold; */
 			font-size: 1.25em; 
 		}
 		.links {
@@ -117,26 +123,26 @@ a {
 	}
 	
 	.title {
-		font-weight:bold;
+		/*font-weight:bold;*/
 		a {
-			font-weight:700;
+			/*font-weight:700;*/
 		}
 	}
 	.excerpt {
 		font-size: 0.85em;
 	}
-	.byline { font-size:0.75em; font-weight: 100; }
+	.byline { font-size:0.75em; /*font-weight: 100;*/ }
 	.date {
-		font-style:italic;
-		color:slategray;
-		
+		/*font-style:italic;
+		color:slategray;*/
 	}
 	.entry { 
-		font-family: 'Lora', serif; 
+		/*font-family: 'Lora', serif; */
+		font-family: serif;
 		font-size: 1em; 
 	}
 	.entry a, .excerpt a {
-		font-weight: bold;
+		/*font-weight: bold;*/
 	}
 	p:first-child {
 		margin-top:0;
