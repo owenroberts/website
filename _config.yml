@@ -1,6 +1,5 @@
 name: owen byron roberts
 description: the website of owen byron roberts
-
 version: v3.4.0
 desintation: /blog/
 permalink: /:year/:month/:day/:title.html
