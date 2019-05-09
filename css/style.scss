@@ -50,19 +50,19 @@ a:hover { color: $purple; }
 .work .columns {
 	margin-bottom: 1em ;
 }
+
 .project {
 	position:relative;
 	.work {
-		display:none;
-		position:absolute;
+		display: none;
+		position: absolute;
 		left: 1em;
-		margin:0;
-		font-size:1.35em;
+		margin: 0;
+		font-size: 2em;
 	}
 	&:hover .work {
 		display:inline-block;
 	}
-	color:white;
 	a { color:black; background:white; }
 	a:hover { color: $purple; }
 }	
