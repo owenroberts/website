@@ -52,16 +52,16 @@ a:hover { color: $purple; }
 }
 
 .project {
-	position:relative;
+	// position:relative;
 	.work {
-		display: none;
-		position: absolute;
-		left: 1em;
-		margin: 0;
-		font-size: 2em;
+		// display: none;
+		// position: absolute;
+		// left: 1em;
+		// margin: 0;
+		// font-size: 2em;
 	}
 	&:hover .work {
-		display:inline-block;
+		// display:inline-block;
 	}
 	a { color:black; background:white; }
 	a:hover { color: $purple; }
