@@ -21,7 +21,7 @@ highlight: true
 
 <p><img src="{{ site.baseurl }}/assets/singleview.png" alt=""></p>
 
-<p>Set the options with your developer profile and bundle etc.  (If you don't have an account set up you can't test on a device, etc., so maybe <a href="https://developer.apple.com/library/content/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/Chapters/SettingUpUserAccounts.html" target="blank">start here</a> and do that first.)</p>
+<p>Set the options with your developer profile and bundle etc.  (If you don't have an account set up you can't test on a device, etc., so maybe <a href="https://developer.apple.com/library/content/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/Chapters/SettingUpUserAccounts.html" target="_blank">start here</a> and do that first.)</p>
 
 <p><img src="{{ site.baseurl }}/assets/options.png" alt=""></p>
 
@@ -83,7 +83,7 @@ class ViewController: UIViewController {
 
 	override func viewDidLoad() {</code></pre>
 
-<p>A quick note, Swift introduced the <a href="https://developer.apple.com/reference/webkit/wkwebview" target="blank">WKWebView</a> or WebKit WebView recently, which I haven't used yet.  It will probably become the standard, but for now UIWebView still works fine.</p>
+<p>A quick note, Swift introduced the <a href="https://developer.apple.com/reference/webkit/wkwebview" target="_blank">WKWebView</a> or WebKit WebView recently, which I haven't used yet.  It will probably become the standard, but for now UIWebView still works fine.</p>
 
 <p>In <code>viewDidLoad()</code> we need to initalized the <code>WebView</code> and then create an HTML request to load the web files and then add it to the <code>view</code>.  It's pretty straight forward, though it took me a while of playing around with stuff and Googling to get the right series of steps to load the HTML.</p>
 
@@ -98,7 +98,7 @@ class ViewController: UIViewController {
 	view.addSubview(web)
 }</code></pre>
 
-<p>That's pretty much it.  The other things you need to add are the launch screen and app icons, <a href="http://stackoverflow.com/questions/28170520/ios-how-to-set-app-icon-and-launch-images" target="blank">this stack overflow article</a> is a good place to start for that as well as <a href="http://stackoverflow.com/questions/34112681/ios-launch-images-driving-me-crazy" target="blank">this one</a>	.  You can test your app with a emulator, but I recommend testing on a real device, I've found there are some inconsistencies.</p>
+<p>That's pretty much it.  The other things you need to add are the launch screen and app icons, <a href="http://stackoverflow.com/questions/28170520/ios-how-to-set-app-icon-and-launch-images" target="_blank">this stack overflow article</a> is a good place to start for that as well as <a href="http://stackoverflow.com/questions/34112681/ios-launch-images-driving-me-crazy" target="_blank">this one</a>	.  You can test your app with a emulator, but I recommend testing on a real device, I've found there are some inconsistencies.</p>
 
 <p><img src="{{ site.baseurl }}/assets/build.png" alt=""></p>
 <hr>
