@@ -1,0 +1,20 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "description": "the website of owen byron roberts",
+  "main": ".eleventy.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/owenroberts/website.git"
+  },
+  "author": "owen roberts",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/owenroberts/website/issues"
+  },
+  "homepage": "https://github.com/owenroberts/website#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.1",
+    "eleventy-sass": "^1.3.1"
+  }
+}
