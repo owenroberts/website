@@ -8,7 +8,7 @@ module.exports = function(eleventyConfig) {
 	// eleventyConfig.addPassthroughCopy("css");
 	// eleventyConfig.addWatchTarget('css');
 
-	eleventyConfig.addPassthroughCopy("imgs");
+	// eleventyConfig.addPassthroughCopy("imgs");
 	eleventyConfig.addPassthroughCopy("favicon.ico");
 	eleventyConfig.addPassthroughCopy("js");
 	eleventyConfig.addPassthroughCopy("**/*.jpg");
@@ -36,6 +36,7 @@ module.exports = function(eleventyConfig) {
 			input: "./",
 			output: "./_site",
 			layouts: "_layouts"
-		}
+		},
+		templateFormats: ['md', 'html']
 	}
 };
