@@ -8,14 +8,18 @@ module.exports = function(eleventyConfig) {
 	// eleventyConfig.addPassthroughCopy("css");
 	// eleventyConfig.addWatchTarget('css');
 
-	// eleventyConfig.addPassthroughCopy("imgs");
+	eleventyConfig.addPassthroughCopy("imgs/");
 	eleventyConfig.addPassthroughCopy("favicon.ico");
-	eleventyConfig.addPassthroughCopy("js");
-	eleventyConfig.addPassthroughCopy("**/*.jpg");
-	eleventyConfig.addPassthroughCopy("**/*.jpeg");
-	eleventyConfig.addPassthroughCopy("**/*.png");
-	eleventyConfig.addPassthroughCopy("**/*.gif");
+	eleventyConfig.addPassthroughCopy("js/*.js");
+	eleventyConfig.addPassthroughCopy("work/**/*.jpg");
+	eleventyConfig.addPassthroughCopy("work/**/*.jpeg");
+	eleventyConfig.addPassthroughCopy("work/**/*.png");
+	eleventyConfig.addPassthroughCopy("work/**/*.gif");
+	
 
+	// eleventyConfig.addPassthroughCopy("**/*.jpeg");
+	// eleventyConfig.addPassthroughCopy("**/*.png");
+	// eleventyConfig.addPassthroughCopy("**/*.gif");
 
 	eleventyConfig.addPlugin(eleventySass);
 
