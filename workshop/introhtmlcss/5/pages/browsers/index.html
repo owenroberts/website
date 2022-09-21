@@ -1,0 +1,71 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>I AM A CAT</title>
+	<link rel="stylesheet" href="../css/styles.css" type="text/css">
+	
+</head>
+
+<body>
+	<div id="header">		
+		<div id="menu">
+			<ul><li><a href="../index.html">home</a></li>  
+				<li><a href="#">cat px</a></li> 
+				<li class="active"><a href="browsers.html">browser compatibility</a></li>  
+				<li ><a href="css.html">CSS tricks</a></li>  
+				<li><a href="ftp.html">ftp</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<div id="logo">
+		<img src="../css/imgs/logo.png" />
+		<h3>this is my <br>website!</h3>
+	</div>
+	
+	<div id="wrapper">
+		<div id="content">
+			<h2>Browsers...</h2>
+			<p>Because browsers are created by different companies they all render CSS styles in different ways.  Most CSS selectors will look similar, but more advanced CSS3 styles are often problematic when testing in different browsers.</p>
+			<p>There are a few ways to deal with this.</p>
+			<p>You can write separate stylesheets for separate browsers.  This is an advanced method which requires some JavaScript to determine what browser is being used and then loading the appropriate stylesheet.  Here's a good turoial on that method: <a href="http://www.thesitewizard.com/css/excludecss.shtml" target="_blank">multiple style sheets</a>.</p>
+			<p>For simpler websites, you can use specific properties to account for different browsers.</p>
+			<p>Those properties look like this:</p>
+			<p><pre>-moz-border-radius: 6px;<br>-webkit-border-radius: 6px;<br>border-radius: 6px;</pre></p>
+			<p>Or more complex:</p>
+			<p><pre>-moz-transform: scale(1.6);<br>-ms-transform: scale(1.6);<br>-o-transform: scale(1.6);<br>-webkit-transform: scale(1.6);<br>transform: scale(1.6);</pre></p>
+			<p>There are a lot of web services which will compute these properties for you, like <a href="http://prefixr.com/" target="_blank">Prefixr</a>.</p>
+			<p>A good example is font, which looks really different in different browsers.  This is a good explanation of how different browsers render font, and how to accommodate the differences: <a href="http://www.smashingmagazine.com/2012/04/24/a-closer-look-at-font-rendering/" target="_blank">Font rendering</a>.</p>
+			
+			
+		</div>
+		
+
+	
+		<div id="sidebar">
+			<div id="about-me">
+				<img src="../css/imgs/cat-50.jpg" width="180px"/>
+				<h4>About Me</h4>
+				<p>I am a cat!  I like to eat cat food and cheezeburgerz.</p>
+				
+				
+			</div>
+			<div id="advert">
+				<img src="../imgs/advert.jpg" />
+			</div>
+		</div>
+	</div>
+	
+	<div id="footer">
+		<div id="footer-content">
+			<h2>Social networking!</h2>
+			<ul><li><a href="#"></a></li>
+				<li><a href="#"></a></li>
+				<li><a href="#"></a></li>
+				<li><a href="#"></a></li>
+			</ul>
+		</div>
+	</div>
+	
+</body>
+</html>

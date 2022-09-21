@@ -1,0 +1,55 @@
+<link rel="shortcut icon" href="favicon.ico"/>
+<meta charset="utf-8">
+<style>
+body {
+  font-family:'Trebuchet MS';
+  width:600px;
+  margin:5%;
+  background-color:white;
+  transition:all 50s;
+  color:black;
+}
+body:hover {
+  background-color:pink;
+}
+
+a {
+  color:pink;
+}
+
+
+</style>
+<p>But still, what is dextrose?</p>
+<p>Dextrose candy: doesn’t quite roll off the tongue. In fact, if you don’t know what dextrose is, which I confess I didn’t until I started Candy Professor, it doesn’t even sound edible!</p>
+<p>That was why intelligent, health minded people prefer products made with Dextrose because they appreciate its great value as the energy fuel of the body…whenever you buy a bar or box of candy look among the ingredients on the wrapper for Dextrose.</p>
+<p>This lawsuit shows how the public acceptance of dextrose was in transition; the department of Agriculture had allowed use of dextrose without disclosure on the grounds that it was not an injurious ingredient.</p>
+
+<script>
+var getRand = function(n) {
+	return Math.floor(Math.random() * n);
+};
+
+var t = "But still, what is dextrose? "
+function step() {
+  t = t.substring(1,t.length) + t.substring(0,1);
+  document.title = t;
+  setTimeout(step, 15);
+}
+
+step();
+
+var changeText = function() {
+  var grafs = document.getElementsByTagName('p');
+  var g = grafs[getRand(grafs.length)];
+  var strings = g.innerHTML.match(/.{1,1}/g);
+  var i = getRand(strings.length-5);
+  strings[i] += '<a href="mythbuster.html">';
+  strings[i+4] += '</a>';
+  
+  g.innerHTML = strings.join('');
+     
+  setTimeout(changeText, getRand(1000));
+}
+ 
+changeText();
+</script>
