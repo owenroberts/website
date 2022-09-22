@@ -7,6 +7,7 @@ categories:
 - art
 - mobile
 - computer
+excerpt: "fuck me"
 ---
 
 <p>Being a computer artist can be a drag.</p>

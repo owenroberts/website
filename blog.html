@@ -1,21 +1,21 @@
 ---
 layout: main
+permalink: blog.html
 ---
-<div id="main">
+
+<div id="main" class="archive">
 	<h2>blog</h2>
-	{% for post in site.posts %}
-		<article class="post medium-12 columns">
+	{% for post in collections.posts %}
+		<article class="post">
 			<div class="title">
-				<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-				<span class="byline">
-					<span class="date">Posted on {{ post.date | date: "%B %e, %Y" }}</span>
+				<a href="{{ site.baseurl }}{{ post.url }}">{{ post.data.title }}</a>
+				<span class="byline">·
+					<span class="date">{{ post.date | date: "%B %e, %Y" }}</span>
 				</span>
 			</div>
-			
 			<div class="excerpt">
-			  {{ post.excerpt | remove: '<p>' | remove: '</p>' }} <!-- <a href="{{ site.baseurl }}{{ post.url }}">... keep reeding</a> -->
+				{% excerpt post.templateContent %}
 			</div>
-			<hr>
 		</article>
 	{% endfor %}
 </div>
