@@ -30,9 +30,9 @@ window.addEventListener('load', function() {
 		numImages = 143;
 	}
 	
-	var bkg = document.getElementById('bkg');
+	var bg = document.getElementById('bg');
 
-	var width = bkg.offsetWidth;
+	var width = bg.offsetWidth;
 	var imgs = [];
 	for (var i = 3; i < numImages; i++) {
 		var img = new Image();
@@ -40,22 +40,22 @@ window.addEventListener('load', function() {
 		else if (i < 100) 	img.src = "imgs/piggy/piggy"+0+0+i+".jpg";
 		else 				img.src = "imgs/piggy/piggy"+0+i+".jpg";
 		imgs.push(img);
-		bkg.appendChild(img);
-		bkg.removeChild(img);
+		bg.appendChild(img);
+		bg.removeChild(img);
 	}
 	var columnWidth;
 	var setSize = function() {
 		columnWidth = window.innerWidth / imgs.length;
 	}
 	setSize();
-	bkg.appendChild(imgs[Math.floor(Math.random()*imgs.length)]);
+	bg.appendChild(imgs[Math.floor(Math.random()*imgs.length)]);
 
 	if (!isMobile.any()) {
 		document.onmousemove = function(ev) {
 			var xpos = ev.pageX;
 			var num = Math.floor(xpos/columnWidth);
-			bkg.removeChild(bkg.firstChild);
-			bkg.appendChild(imgs[num]);
+			bg.removeChild(bg.firstChild);
+			bg.appendChild(imgs[num]);
 		}
 		window.onresize = function(ev) {
 			setSize();
