@@ -20,14 +20,11 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.ignores.add("_attachments");
 	eleventyConfig.ignores.add("README.md");
 	eleventyConfig.ignores.add("talk/slides/_jeks");
-	
-	// eleventyConfig.addPassthroughCopy("css");
-	// eleventyConfig.addWatchTarget('css');
+	eleventyConfig.addPassthroughCopy("CNAME");
 
 	eleventyConfig.addPassthroughCopy("imgs/");
 	eleventyConfig.addPassthroughCopy("assets/");
 	eleventyConfig.addPassthroughCopy("lines/");
-
 
 	eleventyConfig.addPassthroughCopy("favicon.ico");
 	eleventyConfig.addPassthroughCopy("js/*.js");
@@ -62,6 +59,5 @@ module.exports = function(eleventyConfig) {
 			output: "./_site",
 			layouts: "_layouts"
 		},
-		// templateFormats: ['md', 'html']
 	}
 };
