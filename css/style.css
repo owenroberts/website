@@ -96,7 +96,8 @@ a:hover {
     display: inline-block;
   }
 
-  #main p {
+  #main p,
+#container.work #main p {
     margin: 1em 0;
   }
 }
