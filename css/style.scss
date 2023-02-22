@@ -91,7 +91,10 @@ a {
 	}
 
 	#menu li { display: inline-block; }
-	#main p { margin: 1em 0; }
+	#main p,
+	#container.work #main p {
+		margin: 1em 0; 
+	}
 }
 
 @media (min-device-width: 668px) {
