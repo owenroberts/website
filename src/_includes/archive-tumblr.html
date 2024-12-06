@@ -1,0 +1,51 @@
+---
+layout: main
+---
+
+<div class="post">
+	<div class="front">
+		<p class="post-title" > {{ title }} </p>
+		<div class="date">{{ date | toUTCString }}</div>
+		<div class="links">
+
+			{% if categories contains 'doodoo' %}
+				{% assign archive = 'doodoo' %}
+			{% elsif categories contains 'idtio' %}
+				{% assign archive = 'idtio' %}
+			{% else %}
+				{% assign archive = 'archive' %}
+			{% endif %}
+			
+			{% assign previousPost = collections[archive] | getPreviousCollectionItem: page %}
+			{% assign nextPost = collections[archive] | getNextCollectionItem: page %}
+
+			{% if previousPost %}
+				<span class="page-link">next:</span> <a class="prev" href="{{ previousPost.url }}">{{ previousPost.data.title }}</a> / 
+			{% endif %}
+
+			{% if nextPost %}
+				<span class="page-link">previous:</span> <a class="next" href="{{ nextPost.url }}">{{ nextPost.data.title }}</a> / 
+			{% endif %}
+			
+
+			{% if categories contains 'doodoo' %}
+				<span class="cat">
+					<a href="{{ site.url }}/archive/doodoo/" rel="category">doodoo</a>
+				</span> / 
+			{% endif %}
+
+			{% if categories contains 'idtio' %}
+				<span class="cat">
+					<a href="{{ site.url }}/archive/idtio/" rel="category">idtio</a>
+				</span> / 
+			{% endif %}
+			<a href="{{ site.url }}/archive/">archive</a>
+		</div>
+	</div>
+	<div class="entry">
+		{{ content }}
+	</div>
+	<div class="foot">
+		
+	</div>
+</div>

@@ -1,0 +1,33 @@
+---
+layout: main
+---
+
+<div class="post">
+	<div class="front">
+		<p class="post-title" > {{ title }} </p>
+		<p class="post-info"> 
+			<span class="date">{{ date | date: "%B %e, %Y" }}</span>
+		</p>
+		<ul class="links">
+
+			{% assign previousPost = collections.blog | getPreviousCollectionItem: page %}
+			{% assign nextPost = collections.blog | getNextCollectionItem: page %}
+
+			{% if nextPost %}
+				<li><span class="page-link">next:</span> <a class="next" href="{{ nextPost.url }}">{{ nextPost.data.title }} </a></li>
+			{% endif %}
+
+			{% if previousPost %}
+				<li><span class="page-link">previous:</span> <a class="prev" href="{{ previousPost.url }}">{{ previousPost.data.title }}</a></li>
+			{% endif %}
+
+			<li><a href="{{ site.url }}/blog/">blog</a></li>
+		</ul>
+	</div>
+	<div class="entry">
+		{{ content }}
+	</div>
+	<div class="foot">
+		
+	</div>
+</div>

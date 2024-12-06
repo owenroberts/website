@@ -1,0 +1,20 @@
+---
+layout: main
+---
+
+<div id="main" class="archive">
+	<h2>blog</h2>
+	{% for post in collections.blog reversed %}
+		<article class="post">
+			<div class="title">
+				<span class="byline">
+					<span class="date">{{ post.date | date: "%B %e, %Y" }}</span> / 
+				</span>
+				<a href="{{ site.baseurl }}{{ post.url }}">{{ post.data.title }}</a>
+			</div>
+			<div class="excerpt">
+				{% excerpt post.templateContent %}
+			</div>
+		</article>
+	{% endfor %}
+</div>

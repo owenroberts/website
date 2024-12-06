@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+<head>
+	{% include meta.html %}
+	<link rel="stylesheet" type="text/css" href="{{ site.url }}/css/style.css" />
+	<script src="/js/bkg.js" type="text/javascript"></script>
+	<script src="/js/cool.js" type="text/javascript"></script>
+</head>
+<body>
+	<div id="container" class="home">
+		{% include menu.html %}
+		{{ content }}
+	</div>
+</body>
+</html>

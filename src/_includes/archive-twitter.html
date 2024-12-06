@@ -1,0 +1,33 @@
+---
+layout: main
+---
+
+<div class="post archive-tweet">
+	<div class="entry">
+		{{ content }}
+	</div>
+	<div class="front">
+		<div class="date">{{ date | toUTCString }}</div>
+		<div class="links">
+			
+			{% assign previousPost = collections.twitter | getPreviousCollectionItem: page %}
+			{% assign nextPost = collections.twitter | getNextCollectionItem: page %}
+
+			{% if previousPost %}
+				<span class="page-link">next:</span> <a class="prev" href="{{ previousPost.url }}">{{ previousPost.data.title }}</a>
+				<br>
+			{% endif %}
+
+			{% if nextPost %}
+				<span class="page-link">previous:</span> <a class="next" href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>
+				<br>
+			{% endif %}
+
+			<span class="cat">
+				<a href="{{ site.url }}/archive/twitter/" rel="category">twitter</a>
+			</span> / 
+			<a href="{{ site.url }}/archive/">archive</a>
+
+		</div>
+	</div>
+</div>
