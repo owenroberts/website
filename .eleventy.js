@@ -2,7 +2,6 @@ const striptags = require('striptags');
 const inspect = require('util').inspect;
 const moment = require("moment");
 
-
 function extractExcerpt(content) {
 	// https://www.jonathanyeong.com/garden/excerpts-with-eleventy/
 	excerpt = striptags(content)

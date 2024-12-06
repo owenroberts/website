@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "ELEVENTY_ENV=dev npm-run-all build:sass --parallel watch:*",
-    "watch:sass": "sass --watch src/css:_site/css",
-    "build:sass": "sass src/css:_site/css",
+    "watch:sass": "sass --watch src/css:docs/css",
+    "build:sass": "sass src/css:docs/css",
     "watch:eleventy": "eleventy --serve --quiet",
     "build:eleventy": "eleventy",
     "start": "npm-run-all build:sass --parallel watch:*",
