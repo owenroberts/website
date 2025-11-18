@@ -25,6 +25,15 @@ module.exports = function(eleventy) {
 	eleventy.addPassthroughCopy("./src/work/**/*.jpeg");
 	eleventy.addPassthroughCopy("./src/work/**/*.png");
 	eleventy.addPassthroughCopy("./src/work/**/*.gif");
+	eleventy.addPassthroughCopy("./src/work/**/*.mp4");
+
+	// load images from talk folders
+	eleventy.addPassthroughCopy("./src/talks/**/*.png");
+	eleventy.addPassthroughCopy("./src/talks/**/*.jpg");
+	eleventy.addPassthroughCopy("./src/talks/**/*.mp3");
+	eleventy.addPassthroughCopy("./src/talks/**/*.ogg");
+	eleventy.addPassthroughCopy("./src/talks/**/*.gif");
+	eleventy.addPassthroughCopy("./src/talks/**/*.mp4");
 
 	// load blog assets
 	eleventy.addPassthroughCopy("./src/assets/");
