@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-$purple: #765ac6; // #CFC6E9;
+$purple: #CFC6E9;
 
 * { box-sizing: border-box; }
 
@@ -8,6 +8,8 @@ body {
 	font-family: verdana, sans-serif;
 	// font-size: 13px;
 	line-height: 1.5;
+	/*color: white;*/
+	/*background: #574e5b;*/
 }
 
 img { max-width: 100%; }
@@ -18,7 +20,7 @@ hr {
 }
 
 a { 
-	color: black;
+	/*color: white;*/
 	transition: color 100ms ease-in;
 	&:hover { color: $purple; }
 }
