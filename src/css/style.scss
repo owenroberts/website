@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-$purple: #CFC6E9;
+$purple: #765ac6; // #CFC6E9;
 
 * { box-sizing: border-box; }
 
@@ -21,6 +21,7 @@ hr {
 
 a { 
 	/*color: white;*/
+	color: black;
 	transition: color 100ms ease-in;
 	&:hover { color: $purple; }
 }
@@ -111,6 +112,10 @@ a {
 		grid-template-columns: 100%;
 		margin-top: 1em;
 		padding: 1em;
+
+		&.talk {
+			width: unset;
+		}
 	}
 
 	#title p { margin: 0; }
