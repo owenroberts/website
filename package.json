@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "ELEVENTY_ENV=dev npm-run-all build:sass --parallel watch:*",
-    "watch:sass": "sass --watch src/css:docs/css",
-    "build:sass": "sass src/css:docs/css",
+    "watch:sass": "sass --watch src/css:dist/css",
+    "build:sass": "sass src/css:dist/css",
     "watch:eleventy": "eleventy --serve --quiet",
     "build:eleventy": "eleventy",
     "start": "npm-run-all build:sass --parallel watch:*",
@@ -23,6 +23,7 @@
     "admin": "^1.4.1",
     "firebase": "^11.0.2",
     "firebase-admin": "^13.0.1",
+    "jsdom": "^27.3.0",
     "moment": "^2.30.1",
     "npm-run-all": "^4.1.5",
     "sass": "^1.81.0",

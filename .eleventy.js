@@ -1,6 +1,8 @@
 const striptags = require('striptags');
 const inspect = require('util').inspect;
 const moment = require("moment");
+const { JSDOM } = require("jsdom");
+
 
 function extractExcerpt(content) {
 	// https://www.jonathanyeong.com/garden/excerpts-with-eleventy/
@@ -16,24 +18,10 @@ module.exports = function(eleventy) {
 
 	// site and backgrounds images and js
 	eleventy.addPassthroughCopy("./src/imgs/");
+	eleventy.addPassthroughCopy("./src/css/");
 	eleventy.addPassthroughCopy("./src/js/");
 	eleventy.addPassthroughCopy("CNAME");
 	eleventy.addPassthroughCopy("./src/favicon.ico");
-
-	// load images from work folders
-	eleventy.addPassthroughCopy("./src/work/**/*.jpg");
-	eleventy.addPassthroughCopy("./src/work/**/*.jpeg");
-	eleventy.addPassthroughCopy("./src/work/**/*.png");
-	eleventy.addPassthroughCopy("./src/work/**/*.gif");
-	eleventy.addPassthroughCopy("./src/work/**/*.mp4");
-
-	// load images from talk folders
-	eleventy.addPassthroughCopy("./src/talks/**/*.png");
-	eleventy.addPassthroughCopy("./src/talks/**/*.jpg");
-	eleventy.addPassthroughCopy("./src/talks/**/*.mp3");
-	eleventy.addPassthroughCopy("./src/talks/**/*.ogg");
-	eleventy.addPassthroughCopy("./src/talks/**/*.gif");
-	eleventy.addPassthroughCopy("./src/talks/**/*.mp4");
 
 	// load blog assets
 	eleventy.addPassthroughCopy("./src/assets/");
@@ -42,6 +30,28 @@ module.exports = function(eleventy) {
 	eleventy.addShortcode("excerpt", (content) => extractExcerpt(content));
 	eleventy.addFilter("debug", (content) => `<pre>${inspect(content)}</pre>`);
 	eleventy.addFilter("keys", (content) => `${Object.keys(content)}`);
+
+	const url = process.env.ELEVENTY_ENV === 'dev' ? 'http://localhost:8080' : 'https://owen.cool';
+
+	eleventy.addTransform("prependImageUrl", (content, outputPath) => {
+		if (outputPath && outputPath.endsWith(".html") && outputPath.includes("/work/")) {
+			// console.log(outputPath);
+			let dom = new JSDOM(content);
+			let document = dom.window.document;
+
+			let images = document.querySelectorAll("img");
+			images.forEach(image => {
+				let src = image.getAttribute("src");
+				if (!src.includes("http")) {
+					// console.log(`${url}/assets/${src}`);
+					image.setAttribute("src", `${url}/assets/${src}`);
+				}
+			});
+
+	      return dom.serialize();
+	    }
+	    return content;
+	});
 
 	eleventy.addCollection('archive', collection =>
 		collection.getFilteredByGlob([
@@ -96,7 +106,7 @@ module.exports = function(eleventy) {
 	return {
 		dir: {
 			input: "./src",
-			output: "./docs",
+			output: "./dist",
 		}
 	}
 };

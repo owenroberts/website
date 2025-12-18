@@ -3,4 +3,5 @@ node_modules
 _site
 package-lock.json
 src/archive
-docs/
+docs
+dist
