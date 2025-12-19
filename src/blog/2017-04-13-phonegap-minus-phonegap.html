@@ -19,25 +19,25 @@ eleventyExcludeFromCollections: true
 <hr>
 <p>Start with a new Single View Application in Xcode.</p>
 
-<p><img src="{{ site.baseurl }}/assets/singleview.png" alt=""></p>
+<p><img src="{{ site.url }}/assets/singleview.png" alt=""></p>
 
 <p>Set the options with your developer profile and bundle etc.  (If you don't have an account set up you can't test on a device, etc., so maybe <a href="https://developer.apple.com/library/content/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/Chapters/SettingUpUserAccounts.html" target="_blank">start here</a> and do that first.)</p>
 
-<p><img src="{{ site.baseurl }}/assets/options.png" alt=""></p>
+<p><img src="{{ site.url }}/assets/options.png" alt=""></p>
 
 <p>Save the project in the same folder where your web project is.  My <code>www</code> folder has all of my HTML/CSS and JavaScript and Xcode will create a <code>Refresh</code> folder for the iOS project.</p>
 
-<p><img src="{{ site.baseurl }}/assets/folder.png" alt=""></p>
+<p><img src="{{ site.url }}/assets/folder.png" alt=""></p>
 
 <p>Once Xcode creates the project, open the file structure on the left hand side.  We aren't going to use the iOS built in UI, so you can go ahead and delete the default story boards, <code>Main.storyboard</code> and <code>LaunchScreen.storyboard</code>.  Delete and choose "Move to Trash".</p>
 
-<p><img src="{{ site.baseurl }}/assets/files.png" alt=""></p>
+<p><img src="{{ site.url }}/assets/files.png" alt=""></p>
 
 <p>Now we need to associate the website files with our project.  Grab the <code>www</code> folder, or whatever your project is called, and drag it into the file hierarchy in Xcode, inside the main folder (mine is called "Refresh").  The defaults should be fine here, "Create Folder References" and "Add to targets: Refresh" with the main app checked.</p>
 
 
-<p><img src="{{ site.baseurl }}/assets/references.png" alt=""></p>
-<p><img src="{{ site.baseurl }}/assets/newfiles.png" alt=""></p>
+<p><img src="{{ site.url }}/assets/references.png" alt=""></p>
+<p><img src="{{ site.url }}/assets/newfiles.png" alt=""></p>
 
 <p>Next we're going to set up the <code>AppDelegate.swift</code> file to use the <code>ViewController.swift</code> without the storyboards.</p>
 
@@ -71,7 +71,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 <p>For this to work we need to remove the "Main storyboard file base name" item from the Info.plist file.  Just click on the minus button next to the name and that's it.</p>
 
-<p><img src="{{ site.baseurl }}/assets/plist.png" alt=""></p>
+<p><img src="{{ site.url }}/assets/plist.png" alt=""></p>
 
 <p>Start by creating a class variable <code>UIWebView</code> in the ViewController class.  This will be initialized in the <code>viewDidLoad</code> function.  It doesn't necessarily need to be a class variable but it will help if you need to use it in other functions down the road.</p>
 
@@ -100,7 +100,7 @@ class ViewController: UIViewController {
 
 <p>That's pretty much it.  The other things you need to add are the launch screen and app icons, <a href="http://stackoverflow.com/questions/28170520/ios-how-to-set-app-icon-and-launch-images" target="_blank">this stack overflow article</a> is a good place to start for that as well as <a href="http://stackoverflow.com/questions/34112681/ios-launch-images-driving-me-crazy" target="_blank">this one</a>	.  You can test your app with a emulator, but I recommend testing on a real device, I've found there are some inconsistencies.</p>
 
-<p><img src="{{ site.baseurl }}/assets/build.png" alt=""></p>
+<p><img src="{{ site.url }}/assets/build.png" alt=""></p>
 <hr>
 <p>There's a few other things I've used that might not be needed but might be helpful.</p>
 <ul>

@@ -10,7 +10,7 @@ layout: main
 				<span class="byline">
 					<span class="date">{{ post.date | date: "%B %e, %Y" }}</span> / 
 				</span>
-				<a href="{{ site.baseurl }}{{ post.url }}">{{ post.data.title }}</a>
+				<a href="{{ site.url }}{{ post.url }}">{{ post.data.title }}</a>
 			</div>
 			<div class="excerpt">
 				{% excerpt post.templateContent %}
