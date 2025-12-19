@@ -1,3 +1,4 @@
+const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
 const striptags = require('striptags');
 const inspect = require('util').inspect;
 const moment = require("moment");
@@ -16,12 +17,16 @@ function extractExcerpt(content) {
 
 module.exports = function(eleventy) {
 
+	eleventy.addPlugin(EleventyHtmlBasePlugin);
+
 	// site and backgrounds images and js
 	eleventy.addPassthroughCopy("./src/imgs/");
 	eleventy.addPassthroughCopy("./src/css/");
 	eleventy.addPassthroughCopy("./src/js/");
-	eleventy.addPassthroughCopy("CNAME");
 	eleventy.addPassthroughCopy("./src/favicon.ico");
+	
+	eleventy.addPassthroughCopy("CNAME");
+	eleventy.addPassthroughCopy(".nojekyll");
 
 	// load blog assets
 	eleventy.addPassthroughCopy("./src/assets/");
@@ -31,7 +36,9 @@ module.exports = function(eleventy) {
 	eleventy.addFilter("debug", (content) => `<pre>${inspect(content)}</pre>`);
 	eleventy.addFilter("keys", (content) => `${Object.keys(content)}`);
 
-	const url = process.env.ELEVENTY_ENV === 'dev' ? 'http://localhost:8080' : 'https://owen.cool';
+	const url = process.env.ELEVENTY_ENV === 'dev' ? 
+		'http://localhost:8080/website' : 
+		'https://owen.cool';
 
 	eleventy.addTransform("prependImageUrl", (content, outputPath) => {
 		if (outputPath && outputPath.endsWith(".html") && outputPath.includes("/work/")) {
@@ -43,7 +50,7 @@ module.exports = function(eleventy) {
 			images.forEach(image => {
 				let src = image.getAttribute("src");
 				if (!src.includes("http")) {
-					// console.log(`${url}/assets/${src}`);
+					
 					image.setAttribute("src", `${url}/assets/${src}`);
 				}
 			});
@@ -106,7 +113,7 @@ module.exports = function(eleventy) {
 	return {
 		dir: {
 			input: "./src",
-			output: "./dist",
-		}
+		},
+		pathPrefix: "/website/"
 	}
 };
