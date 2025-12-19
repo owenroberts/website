@@ -1,7 +1,8 @@
 .DS_Store
 node_modules
 _site
-package-lock.json
 src/archive
 docs
 dist
+gh-pages
+gh-pages.pub
