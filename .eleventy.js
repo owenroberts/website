@@ -1,27 +1,38 @@
-const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
-const striptags = require('striptags');
-const inspect = require('util').inspect;
-const moment = require("moment");
-const { JSDOM } = require("jsdom");
-
+import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
+import { JSDOM } from "jsdom";
+import striptags from "striptags";
+import { inspect } from "util";
+import moment from "moment";
+import eleventySass from "eleventy-sass";
 
 function extractExcerpt(content) {
 	// https://www.jonathanyeong.com/garden/excerpts-with-eleventy/
-	excerpt = striptags(content)
+	return striptags(content)
 		.substring(0, 80) // Cap at 200 characters
 		.replace(/^\s+|\s+$|\s+(?=\s)/g, "")
 		.trim()
 		.concat("...");
-	return excerpt;
 }
 
-module.exports = function(eleventy) {
+export default function(eleventy) {
+
+	const isDev = process.env.ELEVENTY_ENV === 'dev'; 
+	const url = isDev ? 
+		'http://localhost:8080/website' : 
+		'https://owen.cool';
 
 	eleventy.addPlugin(EleventyHtmlBasePlugin);
 
+	eleventy.addPlugin(eleventySass, {
+    	sass: {
+			sourceMap: isDev,
+			sourceMapIncludeSources: isDev,
+		},
+	});
+
 	// site and backgrounds images and js
 	eleventy.addPassthroughCopy("./src/imgs/");
-	eleventy.addPassthroughCopy("./src/css/");
+	// eleventy.addPassthroughCopy("./src/css/");
 	eleventy.addPassthroughCopy("./src/js/");
 	eleventy.addPassthroughCopy("./src/favicon.ico");
 	
@@ -36,9 +47,6 @@ module.exports = function(eleventy) {
 	eleventy.addFilter("debug", (content) => `<pre>${inspect(content)}</pre>`);
 	eleventy.addFilter("keys", (content) => `${Object.keys(content)}`);
 
-	const url = process.env.ELEVENTY_ENV === 'dev' ? 
-		'http://localhost:8080/website' : 
-		'https://owen.cool';
 
 	eleventy.addTransform("prependImageUrl", (content, outputPath) => {
 		if (outputPath && outputPath.endsWith(".html") && outputPath.includes("/work/")) {
