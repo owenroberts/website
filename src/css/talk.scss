@@ -1,0 +1,40 @@
+body {
+
+	background: linear-gradient(0deg, rgba(181, 150, 204, 0.95) 0%, rgb(159 146 135 / 95%) 15%, rgba(120, 98, 159, 0.95) 100%), url(noise.jpg);
+
+	color: white;
+	height: 100vh;
+	// overflow-x: hidden;
+
+	a { 
+		color: lightblue; 
+		word-wrap: break-word;
+	}
+	a:hover { color: blue; }
+}
+
+#container {
+	display: block;
+	// grid-template-columns: unset;
+}
+
+.talk {
+	display: block;
+	width: 36em;
+	
+	h1 {
+		text-align: center;
+	}
+
+	#main p {
+		max-width: unset;
+		margin: 4em auto;
+	}
+	img {
+		width: 100%;
+	}
+
+	h1, p {
+		margin: 4em 0;
+	}
+}

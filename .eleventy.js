@@ -32,7 +32,7 @@ export default function(eleventy) {
 
 	// site and backgrounds images and js
 	eleventy.addPassthroughCopy("./src/imgs/");
-	// eleventy.addPassthroughCopy("./src/css/");
+	eleventy.addPassthroughCopy("./src/css/");
 	eleventy.addPassthroughCopy("./src/js/");
 	eleventy.addPassthroughCopy("./src/favicon.ico");
 	
@@ -41,6 +41,7 @@ export default function(eleventy) {
 
 	// load blog assets
 	eleventy.addPassthroughCopy("./src/assets/");
+	eleventy.addPassthroughCopy("./src/talks/wac2025/media/");
 
 	// setup
 	eleventy.addShortcode("excerpt", (content) => extractExcerpt(content));

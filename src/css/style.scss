@@ -41,22 +41,6 @@ a {
 	&.work {
 		// max-width: 1136px;
 	}
-	&.talk {
-		// grid-template-columns: unset;
-		display: block;
-		width: 36em;
-		
-		#main p {
-			max-width: unset;
-		}
-		img {
-			width: 100%;
-		}
-
-		h1, p {
-			margin: 4em 0;
-		}
-	}
 }
 
 #bg {
