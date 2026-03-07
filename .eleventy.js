@@ -42,6 +42,7 @@ export default function(eleventy) {
 	// load blog assets
 	eleventy.addPassthroughCopy("./src/assets/");
 	eleventy.addPassthroughCopy("./src/talks/wac2025/media/");
+	eleventy.addPassthroughCopy("./src/talks/weirdosphere/media/");
 
 	// setup
 	eleventy.addShortcode("excerpt", (content) => extractExcerpt(content));

@@ -31,10 +31,22 @@ body {
 		margin: 4em auto;
 	}
 	img {
-		width: 100%;
+		// width: 100%;
+		display: block;
+		margin: auto;
 	}
 
 	h1, p {
 		margin: 4em 0;
 	}
+}
+
+.gallery-2 {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+.gallery-3 {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
 }
