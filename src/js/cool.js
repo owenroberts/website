@@ -8,7 +8,7 @@ window.addEventListener('load', function() {
 	var timer = Date.now();
 	
 	var b = document.querySelector("#butt");
-	var t = b.innerHTML;
+	if (b) var t = b.innerHTML;
 	
 	function letterMove() {
 		var n = Math.floor(Math.random() * t.length);

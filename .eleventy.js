@@ -49,7 +49,6 @@ export default function(eleventy) {
 	eleventy.addFilter("debug", (content) => `<pre>${inspect(content)}</pre>`);
 	eleventy.addFilter("keys", (content) => `${Object.keys(content)}`);
 
-
 	eleventy.addTransform("prependImageUrl", (content, outputPath) => {
 		if (outputPath && outputPath.endsWith(".html") && outputPath.includes("/work/")) {
 			// console.log(outputPath);
