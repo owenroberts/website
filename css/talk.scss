@@ -39,6 +39,12 @@ body {
 	h1, p {
 		margin: 4em 0;
 	}
+
+	.utube-wide iframe,
+	.utube-wide video {
+		top: 50%;
+		height: unset;
+	}
 }
 
 .gallery-2 {
